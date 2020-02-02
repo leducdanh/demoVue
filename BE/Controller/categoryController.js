@@ -23,4 +23,15 @@ router.get("/:id/product", (req, res) => {
     })
 });
 
+router.post("/", (req, res) => {
+    categoryRepo.insertCat(req.body)
+    .then(insertId => {
+        res.json({"CatID": insertId,
+                    "CatName": req.body.CatName});
+    }).catch(err => {
+        console.log(err)
+        res.statusCode = 500
+    })
+});
+
 module.exports = router;

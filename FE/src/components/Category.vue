@@ -1,35 +1,28 @@
 <template>
   <div class="hello">
     <b-list-group>
-      <b-list-group-item v-for="item in listCategory" :key="item.CatID" :to="`/cat/${item.CatID}/product`">{{item.CatName}}</b-list-group-item>
+      <b-list-group-item
+        v-for="item in listCategory"
+        :key="item.CatID"
+        :to="`/cat/${item.CatID}/product`"
+      >{{item.CatName}}</b-list-group-item>
     </b-list-group>
-    <hr>
-    <b-button to="/product/insert">Thêm sản phẩm</b-button>
+    <hr />
+    <b-button variant="primary" to="/cat/insert">Thêm loại sản phẩm</b-button>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   name: "Category",
-  props: {
-    msg: String
-  },
+  props: ["listCategory"],
   data() {
     return {
-      listCategory:[]
-    }
+      // listCategory:[]
+    };
   },
-  mounted(){
-    axios.get("http://localhost:3000/cat")
-    .then(res => {
-      this.listCategory = res.data;
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
+  created() {},
+  mouted() {}
 };
 </script>
 

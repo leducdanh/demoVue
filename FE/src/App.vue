@@ -3,7 +3,9 @@
     <b-container class="mt-5">
       <b-row>
         <b-col col lg="3">
-          <Category/>
+          <Category :listCategory="$store.state.categories" @insert-cat="InsertNewCat()"/>
+          <hr />
+          <b-button to="/product/insert">Thêm sản phẩm</b-button>
         </b-col>
         <b-col col lg="9">
           <router-view />
@@ -15,12 +17,34 @@
 
 <script>
 import Category from "./components/Category.vue";
+import axios from "axios";
 
 export default {
-  components:{
+  components: {
     Category
+  },
+  data() {
+    return {
+      // categories: []
+    };
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/cat")
+      .then(res => {
+        this.$store.state.categories = res.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
+  method: {
+    InsertNewCat(newCat) {
+      console.log("InsertNewCat",newCat)
+      this.$store.state.categories.push(newCat)
+    }
   }
-}
+};
 </script>
 
 <style>
