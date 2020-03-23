@@ -18,6 +18,7 @@
 <script>
 import Category from "./components/Category.vue";
 import axios from "axios";
+import dev_domain from "../vueconfig";
 
 export default {
   components: {
@@ -30,7 +31,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/cat")
+      .get(`${dev_domain}/cat`)
       .then(res => {
         this.$store.state.categories = res.data;
       })

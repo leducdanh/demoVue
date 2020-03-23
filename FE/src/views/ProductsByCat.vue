@@ -24,6 +24,7 @@
 
 <script>
 import axios from "axios";
+import dev_domain from "../../vueconfig";
 
 export default {
   name: "home",
@@ -38,7 +39,7 @@ export default {
   methods: {
     fetchProducts(catId) {
       axios
-        .get(`http://localhost:3000/cat/${catId}/product`)
+        .get(`${dev_domain}/cat/${catId}/product`)
         .then(res => {
           this.items = res.data;
         })
@@ -48,7 +49,7 @@ export default {
     },
     Delproduct(item){
       axios
-        .delete(`http://localhost:3000/product/${item.ProID}`)
+        .delete(`${dev_domain}/product/${item.ProID}`)
         .then(res => {
           console.log(res)
           this.items.splice(this.items.indexOf(item), 1)

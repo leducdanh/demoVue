@@ -39,6 +39,7 @@
 
 <script>
 import axios from "axios";
+import dev_domain from "../../vueconfig";
 
 export default {
   name: "insertProduct",
@@ -57,7 +58,7 @@ export default {
     insertproduct() {
       console.log(this.selected);
       axios
-        .post("http://localhost:3000/product", {
+        .post(`${dev_domain}/product`, {
           CatID: Number(this.selected),
           ProName: this.namePro,
           Price: Number(this.pricepro)
@@ -72,7 +73,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:3000/cat")
+      .get(`${dev_domain}/cat`)
       .then(res => {
         res.data.map(item => {
           this.listCategory += `"${JSON.stringify(item.CatID)}":"${item.CatName}",`;

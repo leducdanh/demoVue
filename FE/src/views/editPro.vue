@@ -39,6 +39,7 @@
 
 <script>
 import axios from "axios";
+import dev_domain from "../../vueconfig";
 
 export default {
   name: "insertProduct",
@@ -57,7 +58,7 @@ export default {
   methods: {
     editproduct() {
       axios
-        .put(`http://localhost:3000/product/${this.$route.params.id}`, {
+        .put(`${dev_domain}/product/${this.$route.params.id}`, {
           CatID: Number(this.selected),
           ProName: this.namePro,
           Price: Number(this.pricepro)
@@ -72,7 +73,7 @@ export default {
 
     getDetailpro(idPro) {
       axios
-        .get(`http://localhost:3000/product/${idPro}`)
+        .get(`${dev_domain}/product/${idPro}`)
         .then(res => {
           this.namePro = res.data[0].ProName
           this.pricepro = res.data[0].Price
@@ -85,7 +86,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:3000/cat")
+      .get(`${dev_domain}/cat`)
       .then(res => {
         res.data.map(item => {
           this.listCategory += `"${JSON.stringify(item.CatID)}":"${

@@ -18,6 +18,7 @@
 
 <script>
 import axios from "axios";
+import dev_domain from "../../vueconfig";
 
 export default {
   name: "insertCategory",
@@ -33,7 +34,7 @@ export default {
   methods: {
     insertCategory() {
       axios
-        .post("http://localhost:3000/cat", {
+        .post(`${dev_domain}/cat`, {
           CatName: this.nameCat,
         })
         .then(res => {
