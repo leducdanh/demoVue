@@ -6,8 +6,8 @@ var router = express.Router();
 router.get("/", (req, res) => {
     productRepo.loadAll().then(rows => {
         res.json(rows)
-    }).catch( err => {
-        console.log(err)
+    }).catch( () => {
+        // console.log(err)
     })
 })
 
@@ -18,8 +18,8 @@ router.post("/", (req, res) => {
             msg: "success"
         })
     })
-    .catch(err => {
-        console.log(err)
+    .catch(() => {
+        // console.log(err)
         res.statusCode = 500
     })
 })
@@ -32,8 +32,8 @@ router.put("/:id", (req, res) => {
             msg: "success"
         })
     })
-    .catch(err => {
-        console.log(err)
+    .catch(() => {
+        // console.log(err)
         res.statusCode = 500
     })
 })
@@ -42,8 +42,8 @@ router.get("/:id", (req, res) => {
     var id = req.params.id
     productRepo.getDetail(id).then(rows => {
         res.json(rows)
-    }).catch( err => {
-        console.log(err)
+    }).catch( () => {
+        // console.log(err)
     })
 })
 
@@ -51,9 +51,7 @@ router.delete("/:id", (req, res) => {
     var id = req.params.id
     productRepo.delproduct(id).then(rs => {
         res.json(rs)
-    }).catch( err => {
-        console.log(err)
-    })
+    }).catch()
 })
 
 module.exports = router

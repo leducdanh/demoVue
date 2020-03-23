@@ -7,8 +7,8 @@ var router = express.Router();
 router.get("/", (req, res) => {
     categoryRepo.loadAll().then(rows => {
         res.json(rows);
-    }).catch(err => {
-        console.log(err)
+    }).catch(() => {
+        // console.log(err)
         res.statusCode = 500
     })
 });
@@ -17,8 +17,8 @@ router.get("/:id/product", (req, res) => {
     var id = req.params.id;
     productRepo.loadProductByCatID(id).then(rows => {
         res.json(rows);
-    }).catch(err => {
-        console.log(err)
+    }).catch(() => {
+        // console.log(err)
         res.statusCode = 500
     })
 });
@@ -28,8 +28,8 @@ router.post("/", (req, res) => {
     .then(insertId => {
         res.json({"CatID": insertId,
                     "CatName": req.body.CatName});
-    }).catch(err => {
-        console.log(err)
+    }).catch(() => {
+        // console.log(err)
         res.statusCode = 500
     })
 });

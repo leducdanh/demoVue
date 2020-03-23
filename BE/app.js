@@ -11,13 +11,23 @@ var productCtrl = require("./Controller/producrController.js");
 
 app.use("/cat", categoryCtrl);
 app.use("/product", productCtrl);
+
+//Handle production
+if (process.env.NODE_ENV === 'production'){
+    //Static folder
+    app.use(express.static(__dirname + '/public/'));
+
+    //Handle SPA
+    app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+}
+
 // app.get('/', (req, res) => {
 // 	var ret = {
 // 		msg: 'hello from nodejs api'
 // 	};
 // 	res.json(ret);
 // });
-
-app.listen(3000, () => {
-    console.log("lister port 3000")
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+    console.log(`lister port ${port}`)
 })
