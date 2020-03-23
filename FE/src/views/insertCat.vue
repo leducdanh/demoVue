@@ -18,7 +18,7 @@
 
 <script>
 import axios from "axios";
-import dev_domain from "../../vueconfig";
+import {dev_domain} from "../../vueconfig";
 
 export default {
   name: "insertCategory",
