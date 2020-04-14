@@ -69,4 +69,8 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+.table td {
+  padding: 0 !important;
+  vertical-align: middle !important;
+}
 </style>
