@@ -38,11 +38,9 @@ export default {
           CatName: this.nameCat,
         })
         .then(res => {
-          console.log(res);
           this.$store.state.categories.push(res.data)
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
         });
     }
   },

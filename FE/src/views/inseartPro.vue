@@ -66,8 +66,8 @@ export default {
         .then(res => {
           console.log(res);
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+          // console.log(err);
         });
     }
   },
@@ -81,8 +81,8 @@ export default {
         this.listCategory = this.listCategory.substring(0, this.listCategory.length - 1) + "}";
         this.listCategory = JSON.parse(this.listCategory);
       })
-      .catch(err => {
-        console.log(err);
+      .catch(() => {
+        // console.log(err);
       });
   }
 };

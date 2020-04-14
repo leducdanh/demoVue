@@ -43,8 +43,8 @@ export default {
         .then(res => {
           this.items = res.data;
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+          // console.log(err);
         });
     },
     Delproduct(item){
@@ -54,8 +54,8 @@ export default {
           console.log(res)
           this.items.splice(this.items.indexOf(item), 1)
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+          // console.log(err);
         });
     }
   },

@@ -66,8 +66,8 @@ export default {
         .then(res => {
           console.log(res);
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+          // console.log(err);
         });
     },
 
@@ -79,8 +79,8 @@ export default {
           this.pricepro = res.data[0].Price
           this.selected = res.data[0].CatID
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+          // console.log(err);
         });
     }
   },
@@ -97,8 +97,8 @@ export default {
           this.listCategory.substring(0, this.listCategory.length - 1) + "}";
         this.listCategory = JSON.parse(this.listCategory);
       })
-      .catch(err => {
-        console.log(err);
+      .catch(() => {
+        // console.log(err);
       });
   },
   mounted() {
