@@ -8,12 +8,17 @@ app.use(bodyParser.json());
 
 var categoryCtrl = require("./Controller/categoryController.js");
 var productCtrl = require("./Controller/producrController.js");
+var categoryRepo = require("./Repos/categoryRepo.js");
 
 app.use("/cat", categoryCtrl);
 app.use("/product", productCtrl);
 
+var interval = setInterval(() => {
+    categoryRepo.loadAll().then().catch()
+}, 5000);
+
 //Handle production
-if (process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
     //Static folder
     app.use(express.static(__dirname + '/public/'));
 
