@@ -2,11 +2,11 @@ var mysql = require("mysql");
 
 var createConnection = () => {
     return mysql.createConnection({
-        host: "us-cdbr-iron-east-04.cleardb.net",
+        host: "http://45.63.18.119/",
         // port: "8080",
-        user: "b4b5b6830d6d7c",
-        password: "cb4605d4",
-        database: "heroku_4aaa3f298e05ce3"
+        user: "root",
+        password: "Danh@1234567",
+        database: "qlbh"
     });
 }
 
