@@ -8,7 +8,7 @@ var createConnection = () => {
         // password: "cb4605d4",
         // database: "heroku_4aaa3f298e05ce3"
 
-        host: "http://45.63.18.119",
+        host: "127.0.0.1",
         // port: "8080",
         user: "root",
         password: "Danh@1234567",
