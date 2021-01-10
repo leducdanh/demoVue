@@ -1,0 +1,26 @@
+1. sudo yum install git
+2. install nodejs & yarn & pm2
+3. install mysql
+	- https://www.youtube.com/watch?v=R4yeWIUJYzA
+	- https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-centos-7
+	- import script file 'qlbh.sql'
+4. install nginx
+	- https://www.youtube.com/watch?v=QOfcQG2Iegc&t=563s
+	- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7
+		+ sudo yum install epel-release
+		+ sudo yum install nginx
+		+ sudo systemctl start nginx
+		+ sudo firewall-cmd --permanent --zone=public --add-service=http 
+		+ sudo firewall-cmd --permanent --zone=public --add-service=https
+		+ sudo firewall-cmd --reload
+		+ sudo systemctl enable nginx
+		+ http://server_domain_name_or_IP/
+5. clone src coude
+6. install lib for BE & FE
+7. config nginx
+	- sudo nano /etc/nginx/nginx.conf
+	- https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-centos-7
+8. install certbot & config ssl free
+	- https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
+	- https://www.youtube.com/watch?v=kW-3nTnSDfU
+9. change host in file vue.conf "http://ip" -> "https://qlbh.tk"
