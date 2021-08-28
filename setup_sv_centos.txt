@@ -1,5 +1,5 @@
 1. sudo yum install git
-2. install nodejs & yarn & pm2
+2. install nodejs & yarn & pm2 ssdsd
 3. install mysql
 	- https://www.youtube.com/watch?v=R4yeWIUJYzA
 	- https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-centos-7
