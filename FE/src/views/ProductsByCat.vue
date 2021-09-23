@@ -4,9 +4,9 @@
       <thead>
         <tr>
           <th>STT</th>
-          <th>Tên sản phẩm</th>
-          <th>Giá sản phẩm</th>
-          <th>hành động</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -14,8 +14,8 @@
           <td>{{index + 1}}</td>
           <td>{{item.ProName}}</td>
           <td>{{item.Price}}</td>
-          <td><b-button variant="success" :to="`/product/${item.ProID}`">Sửa</b-button>
-          <b-button variant="danger" @click="Delproduct(item)">Xóa</b-button></td>
+          <td><b-button variant="success" :to="`/product/${item.ProID}`">Edit</b-button>
+          <b-button variant="danger" @click="Delproduct(item)">Del</b-button></td>
         </tr>
       </tbody>
     </table>

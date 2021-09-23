@@ -21,7 +21,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <label class="mr-sm-2" for="inline-form-custom-select-pref">Loại sản phẩm</label>
+      <label class="mr-sm-2" for="inline-form-custom-select-pref">Categories</label>
       <b-form-select
         class="mb-2 mr-sm-2 mb-sm-0"
         v-model="selected"
@@ -32,7 +32,7 @@
           <option :value="null">Choose...</option>
         </template>
       </b-form-select>
-      <b-button type="button" variant="primary" @click="insertproduct">Thêm</b-button>
+      <b-button type="button" variant="primary" @click="insertproduct">Add</b-button>
     </b-form>
   </div>
 </template>
@@ -55,20 +55,13 @@ export default {
     };
   },
   methods: {
-    insertproduct() {
-      console.log(this.selected);
-      axios
+    async insertproduct() {
+      await axios
         .post(`${dev_domain}/product`, {
           CatID: Number(this.selected),
           ProName: this.namePro,
           Price: Number(this.pricepro)
         })
-        .then(res => {
-          console.log(res);
-        })
-        .catch(() => {
-          // console.log(err);
-        });
     }
   },
   created() {

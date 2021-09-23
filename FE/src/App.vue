@@ -5,7 +5,7 @@
         <b-col col lg="3">
           <Category :listCategory="$store.state.categories" @insert-cat="InsertNewCat()"/>
           <hr />
-          <b-button to="/product/insert">Thêm sản phẩm</b-button>
+          <b-button to="/product/insert">Add product</b-button>
         </b-col>
         <b-col col lg="9">
           <router-view />
@@ -41,7 +41,6 @@ export default {
   },
   method: {
     InsertNewCat(newCat) {
-      console.log("InsertNewCat",newCat)
       this.$store.state.categories.push(newCat)
     }
   }

@@ -21,7 +21,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <label class="mr-sm-2" for="inline-form-custom-select-pref">Loại sản phẩm</label>
+      <label class="mr-sm-2" for="inline-form-custom-select-pref">categories</label>
       <b-form-select
         class="mb-2 mr-sm-2 mb-sm-0"
         v-model="selected"
@@ -32,7 +32,7 @@
           <option :value="null">Choose...</option>
         </template>
       </b-form-select>
-      <b-button type="button" variant="primary" @click="editproduct">Cập nhật</b-button>
+      <b-button type="button" variant="primary" @click="editproduct">Update</b-button>
     </b-form>
   </div>
 </template>
@@ -56,19 +56,13 @@ export default {
     };
   },
   methods: {
-    editproduct() {
-      axios
+    async editproduct() {
+      await axios
         .put(`${dev_domain}/product/${this.$route.params.id}`, {
           CatID: Number(this.selected),
           ProName: this.namePro,
           Price: Number(this.pricepro)
         })
-        .then(res => {
-          console.log(res);
-        })
-        .catch(() => {
-          // console.log(err);
-        });
     },
 
     getDetailpro(idPro) {

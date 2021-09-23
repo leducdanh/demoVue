@@ -11,7 +11,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button type="button" variant="primary" @click="insertCategory">Thêm</b-button>
+      <b-button type="button" variant="primary" @click="insertCategory">Add</b-button>
     </b-form>
   </div>
 </template>
